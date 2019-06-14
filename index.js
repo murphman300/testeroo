@@ -24,13 +24,19 @@ Router.use((req, res, next)=>{
 
 Router.get('/api/now', (req, res)=>{
     return res.status(200).json({statusCode: 200, message: "Ok"});
-})
+});
+
+Router.post('/api/oauth/callback', (req, res)=>{
+    log(req.body);
+    if (!req.body.token) return res.status(400).json({statusCode: 400, error: "Bad Request"});
+    return res.status(200).json({statusCode: 200, message: "Ok"});
+});
 
 App.use('/test', Router);
 
 App.use((req, res, next)=>{
     log("404");
-    return res.status(400).json({statusCode: 404, error: "Not Found"});
+    return res.status(404).json({statusCode: 404, error: "Not Found"});
 })
 
 App.listen(3000,(err)=>{
