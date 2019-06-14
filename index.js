@@ -13,18 +13,16 @@ App.use(bodyParser.urlencoded({ extended: false }));
 
 App.use((req, res, next)=>{
     log("Getting Inbound Call");
-    log(req)
     return next();
 });
 
 Router.use((req, res, next)=>{
-    log(req);
+    log(req.path);
     return next();
 })
 
 
 Router.get('/api/now', (req, res)=>{
-    log(req);
     return res.status(200).json({statusCode: 200, message: "Ok"});
 })
 
