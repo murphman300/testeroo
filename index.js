@@ -23,12 +23,12 @@ Router.use((req, res, next)=>{
 })
 
 
-Router.get('/now', (req, res)=>{
+Router.get('/api/now', (req, res)=>{
     log(req);
     return res.status(200).json({statusCode: 200, message: "Ok"});
 })
 
-App.use('/api', Router);
+App.use('/test', Router);
 
 App.use((req, res, next)=>{
     log("404");
