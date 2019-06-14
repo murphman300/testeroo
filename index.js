@@ -16,7 +16,7 @@ cexpresser('../cexpfile.json')
         log("Got File");
         log("Starting");
 
-        Client = new CEClient('https://na1.contractexpress.com', file.token);
+        Client = new CEClient(file.url, file.token);
 
         App.use(bodyParser.json());
         App.use(bodyParser.urlencoded({ extended: false }));
