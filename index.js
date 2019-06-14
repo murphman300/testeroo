@@ -13,6 +13,7 @@ App.use(bodyParser.urlencoded({ extended: false }));
 
 App.use((req, res, next)=>{
     log("Getting Inbound Call");
+    log(req)
     return next();
 });
 
