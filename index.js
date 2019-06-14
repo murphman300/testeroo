@@ -11,7 +11,7 @@ const log = (err) => {
     console.log(PID, new Date(), err);
 };
 
-cexpresser()
+cexpresser('../cexpfile.jsonc')
     .then((file)=>{
         log("Got File");
         log("Starting");
